@@ -8,7 +8,7 @@ The implementation I choose is a simple Restful API with a frontend(separate arc
 
 Typescript
 ```
-Server can be written in a lot of languages. Typescript sits on top of JS and is a typeing library that can be used to limit any bad practices that can happen when writing in RAW JS. 
+Server can be written in a lot of languages. Typescript sits on top of JS and is a typeing library that can be used to limit any bad practices that can happen when writing in RAW JS.
 ```
 
 postgres
@@ -75,7 +75,7 @@ Job -- Represent job listing info
 ```
 
 ## Support Routes
-POST /api/user 
+POST /api/user
 --- create a new user
 GET /user/{id} or GET /user for retrieving all users in the authentoecated tenant
 --- Retrieved users info
@@ -93,7 +93,7 @@ PUT /api/application/{id}
 DEL /api/application/{id}
 --- Deletes an existing application
 
-POST /api/job 
+POST /api/job
 --- create a new job
 GET /api/job/{id} or GET /user for retrieving all users in the authentoecated tenant
 --- Retrieved jobs info
@@ -102,7 +102,7 @@ PUT /api/job/{id}
 DEL /api/job/{id}
 --- Deletes an existing job
 
-POST /api/resume 
+POST /api/resume
 --- create a new resume
 GET /api/resume/{id} or GET /user for retrieving all users in the authentoecated tenant
 --- Retrieved resume info
@@ -115,8 +115,8 @@ DEL /api/resume/{id}
 ## Getting Started
 
 ```
- -- access your email and download and unzip into a folder of your choice
- -- cd into folder/sebbastion
+ -- https://github.com/npitts/sebbastion.git
+ -- cd into sebbastion
  -- run npm i or yarn install
 
 ```
