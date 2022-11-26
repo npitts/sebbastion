@@ -1,10 +1,4 @@
 export const FAKEINFO = '';
-
-
-// todo:  use env vars for the user info, instead
-// FAKEOUT_UUID1=343434324-343243-32435235-324532545
-// FAKEOUT_USERNAME2=cornelius_pitts@yahoo.com
-// FAKEOUT_PASSWORD3=sds@44ADf!409#
 export class fakeUserDB{
     public users: any[];
     private found: boolean;
@@ -15,13 +9,13 @@ export class fakeUserDB{
             {
                 id: "15",
                 usermame:"cornelius_pitts@yahoo.com",
-                password:"sds@44ADf!409#",
+                password:"password123",
                 kind: "applicant"
             },
             {
                 id: "12",
                 usermame:"george@upwave.com",
-                password:"F!sdsna$sdasd%0",
+                password:"password123",
                 kind: "manager"
             },
         ];

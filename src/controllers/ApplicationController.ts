@@ -51,7 +51,7 @@ class ApplicationController extends BaseController{
 
     async getAllApplicationInfo(req: Request, res: Response){
         const {id} = req.params;
-        this.getAppInfoByUserId(req, res, {id: id});
+        this.getAllAppInfo(req, res);
     }
 
     /**
@@ -112,7 +112,6 @@ class ApplicationController extends BaseController{
     async findExistingApplicationById(req: Request, res: Response){
         const {id, status} = req.params;
         this.findById(req, res, id, status);
-        // res.status(200).jsonp({Message: "NOT IMPLEMENTED YET"});
     }
 
     /*

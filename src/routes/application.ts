@@ -19,7 +19,7 @@ userRouter.get(`${base}/info/:status`, (req, res) => {
 })
 */
 
-userRouter.get(`${base}/info/:id`, (req, res) => {
+userRouter.get(`${base}/info`, (req, res) => {
   ApplicationController.getAllApplicationInfo(req, res);
 })
 
