@@ -31,7 +31,7 @@ export default class App {
 
         // temp add for cors
         this.app.use(cors({
-            origin: 'http://localhost:3000'
+            origin: '*'
         }));
         
         //* Method calls `this.app.use()` for each middleware

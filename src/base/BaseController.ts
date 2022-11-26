@@ -1,4 +1,4 @@
-import { Response, Request } from "express";
+import { Response, Request, response } from "express";
 import {Sequelize, DateDataType, SearchPathable , QueryTypes} from 'sequelize';
 import { trimSingleQuotes } from "tslint/lib/utils";
 import ApplicationController from "../controllers/ApplicationController";
@@ -74,6 +74,8 @@ export default class BaseController{
               },
             }
           );
+
+          res.status(200).send('successfull updated status');
         }
 
     protected getAll(req: Request, res: Response) {
