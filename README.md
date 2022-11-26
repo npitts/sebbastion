@@ -122,6 +122,13 @@ DEL /api/resume/{id}
 ```
 
 ## Migrations and Seeding
+There is a migrations folder @ /src/migrations with the following folder inside. There are migrations and seeders including and you shoould only need to run teh commands listed down below but you may have to do more. Pleasee see the sequeize docs(https://sequelize.org/docs/v6/other-topics/migrations/) for more info.
+- config
+- models
+- seeds
+- migrations
+
+
 First up is creating migrations and seeding the db instance with some test data. For convience, the models have been created. You just need to run the migration script(commamd) and seed the db. Follow these steps
 ```
 If you don't have one, you will need to download and install postgres. to do so:
@@ -137,26 +144,42 @@ then do: for migrations
 
 then do: for seeding
 ```
---- same dir as above
+--- go to project/src/migrations
 --- run npx sequelize-cli db:seed:all
 ```
 
+Please note that in each controller.js, you will find a piece of code that looks like the following and will have to upadte to connect to the data source(postgres):
+
+```
+const sequelize = new Sequelize(
+    'neil', // Database Name
+    'neil', // Datbase Username
+    null, // Database Password
+     {
+       host: '127.0.0.1',
+       dialect: 'postgres'
+     }
+   );
+   ```
+
+   when setting up postgres, just name you db neil and you won't have to change anything. also, in a production env, this code wouldn't exist as there would be some sort of glpobal setting so all processes can share. This is just form testing purposes. :)
+
 after running the above, check the db to make sure all of the migrations and seeders have been created.
 
-Please note:
+Please note: (Ran out of time but did plan on moving this into the database)
 You will have to create a user(via the seeder step above), the n update (just grab the user id from the users table and update it here) the following code snippet located at src/services/fakeout.ts
 ```
 this.users = [
             {
-                id: "15",
+                id: "15", // replace with the user created
                 usermame:"cornelius_pitts@yahoo.com",
-                password:"sds@44ADf!409#",
+                password:"Password123",
                 kind: "applicant"
             },
             {
-                id: "12",
+                id: "12", // replace with the user created
                 usermame:"george@upwave.com",
-                password:"F!sdsna$sdasd%0",
+                password:"Password123",
                 kind: "manager"
             },
         ];
@@ -172,7 +195,7 @@ from the /folder/sebbastion folder, do yarn or npm start
 
 ## Links to main libraries to understand
 
--- `Sequelize`: [Hygen](https://www.hygen.io/)
+-- `Sequelize`: [Sequelize](https://sequelize.org/docs/v6/other-topics/migrations/)
 
 -- `Postgres`: [Postgres](https://www.postgresql.org/download/)
 
